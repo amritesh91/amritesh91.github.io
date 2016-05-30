@@ -10,8 +10,8 @@
 		<meta name="Author" content="Amritesh Srivastava" />
 
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
-		<link rel="icon" href="img/favicon.png" type="image/x-icon" />
+		<link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+		<link rel="icon" href="../img/favicon.png" type="image/x-icon" />
 
 		<!-- mobile settings -->
 		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
@@ -21,41 +21,41 @@
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
 
 		<!-- CORE CSS FOR BOOTSTRAP -->
-		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 		
 		<!-- THEME CSS -->
-		<link href="css/essentials.css" rel="stylesheet" type="text/css" />
-		<link href="css/layout.css" rel="stylesheet" type="text/css" />
+		<link href="../css/essentials.css" rel="stylesheet" type="text/css" />
+		<link href="../css/layout.css" rel="stylesheet" type="text/css" />
 
 		<!-- PAGE LEVEL SCRIPTS -->
-		<link href="css/header-1.css" rel="stylesheet" type="text/css" />
-		<link href="css/lightgrey.css" rel="stylesheet" type="text/css" id="color_scheme" />
+		<link href="../css/header-1.css" rel="stylesheet" type="text/css" />
+		<link href="../css/lightgrey.css" rel="stylesheet" type="text/css" id="color_scheme" />
 
 		<style type="text/css">
 
 			@font-face {
 	            font-family: regularText;
-	            src: url('fonts/AlegreyaSansSC-Regular.ttf');
+	            src: url('../fonts/AlegreyaSansSC-Regular.ttf');
 	        }
 
 	        @font-face {
 	            font-family: boldText;
-	            src: url('fonts/AlegreyaSansSC-Bold.ttf');
+	            src: url('../fonts/AlegreyaSansSC-Bold.ttf');
 	        }
 
 	        @font-face {
 	            font-family: lightText;
-	            src: url('fonts/AlegreyaSansSC-Light.ttf');
+	            src: url('../fonts/AlegreyaSansSC-Light.ttf');
 	        }
 
 	        @font-face {
 	            font-family: mediumText;
-	            src: url('fonts/AlegreyaSansSC-Medium.ttf');
+	            src: url('../fonts/AlegreyaSansSC-Medium.ttf');
 	        }
 
 	        @font-face {
 	            font-family: writingText;
-	            src: url('fonts/SEGOEUIL.ttf');
+	            src: url('../fonts/SEGOEUIL.ttf');
 	        }
 
 			/*for the smallest phones*/
@@ -83,6 +83,44 @@
 	        	border-radius: 50%;
 	        }
 
+	        .header-span {
+	        	display: inline-block;
+	        	float: right;
+	        }
+
+            .overlay-show {
+				position: fixed;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				z-index: 30;
+				background-color: rgba(0,0,0,0.5);
+			}
+			.overlay-remove {
+				position: fixed;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				z-index: 30;
+				background-color: rgba(0,0,0,0.5);
+				display: none;
+			}
+			.overlay-img {
+				position: relative;
+				top: 45%;
+				left: 45%;
+			}
+
+	        #popup {
+	        	width: 60%;
+	            z-index:999999; 
+	            margin: 2% 2% 2% 2%;    
+	            font-family: boldText;
+	            position: fixed;
+	        }
+		        
 		</style>
 
 		<script>
@@ -98,6 +136,17 @@
 	</head>
 
 	<body class="smoothscroll enable-animation">
+
+		<div class="overlay-remove" id="overlay">
+			<img src="../img/load.gif" class="overlay-img" />
+		</div>
+
+		<div class="overlay-remove" id="overlay-error">
+		</div>
+
+	    <div id="popup" class="alert alert-danger" role="alert">
+	            <button type="button" class="close" id="btnExitPopup" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	    </div>
 
 		<!-- wrapper -->
 		<div id="wrapper">
@@ -115,7 +164,7 @@
 
 						<!-- Logo -->
 						<a class="logo pull-left" href="index.html">
-							<img src="img/logo-black2.png" alt="My Logo" />
+							<img src="../img/logo-black2.png" alt="Mentored-Research Logo" />
 						</a>
 
 						<div class="navbar-collapse pull-right nav-main-collapse collapse submenu-dark">
@@ -124,22 +173,22 @@
 								<ul id="topMain" class="nav nav-pills nav-main">
 
 									<li>    
-										<a href="#about">
+										<a href="../">
 											HOME
 										</a>
 									</li>
 									<li>    
-										<a href="arrays">
+										<a href="#contact-me">
 											ARRAYS
 										</a>
 									</li>
 									<li>    
-										<a href="linked-lists">
+										<a href="../linked-lists">
 											LINKED LISTS
 										</a>
 									</li>
 									<li>    
-										<a href="profile-links#profile-links">
+										<a href="../profile-links#profile-links">
 											PROFILE LINKS
 										</a>
 									</li>
@@ -154,53 +203,28 @@
 			</div>
 			<!-- /header div -->
 
-			<!-- Section 2 -->
-			<section class="height-500" id="slider" style="background:url('img/12-min.jpg')">
-				<div class="overlay dark-6"><!-- dark overlay [0 to 9 opacity] --></div>
 			
-				<div class="display-table">
-					<div class="display-table-cell vertical-align-middle">
-						
-						<div class="container text-center">
-							
-							<p class="lead font-lato size-30 wow fadeInUp" data-wow-delay="0.7s">
-								<span class="theme-color weight-400 font-style-italic">Welcome to</span>
-							</p>
-
-							<h1 class="nomargin wow fadeInUp" data-wow-delay="0.4s">
-								
-								<span class="rotate " data-animation="flip" data-speed="4000">
-									JAVAFORGEEKS.COM
-								</span>
-							</h1>
-
-						</div>
-
-					</div>
-				</div>
-
-			</section>
-			<!-- /Section 2 -->
 
 
 			<!-- Section 3 -->
-			<section id="about" class="alternate">
+			<section id="contact-me" class="alternate">
 				<div class="container">
 
 					<!-- Section Header -->
 					<header class="section-header text-center">
 						<div class="heading-title heading-line-double text-center">
-							<h2>Hi There!</h2>
+							<h2>
+								ARRAYS
+							</h2>
 						</div>
 					</header>
 					<!-- /Section Header -->
 
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-								<p>
-								Here you will find solutions to commmonly asked interview questions in <b>JAVA</b>.
-							</p>
-							
+
+							1. Question 1 goes here.
+
 						</div>   <!-- /row -->
 					</div>  <!-- /row -->
 
@@ -214,9 +238,9 @@
 
 					<div class="row">
 						
-						<div class="col-md-4">
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 margin-top-20">
 							<!-- Footer Logo -->
-							<img class="footer-logo" src="img/logo-white2.png" alt="" />
+							<img class="footer-logo" src="../img/logo-white2.png" alt="" />
 
 							<!-- Small Description -->
 							<p>If you're in the city, drop in for a quick chat</p>
@@ -237,20 +261,20 @@
 							<!-- /Contact Address -->
 						</div>
 
-						<div class="col-md-4">
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 margin-top-20">
 							<!-- Links -->
 							<h4 class="letter-spacing-1">EXPLORE javaforgeeks.com</h4>
 							<ul class="footer-links list-unstyled">
-								<li><a href="#">Home</a></li>
+								<li><a href="http://javaforgeeks.com/">Home</a></li>
 								<li><a href="http://javaforgeeks.com/#about">About Me</a></li>
 								<li><a href="http://javaforgeeks.com/profile-links">Profile Links</a></li>
 								<li><a href="http://javaforgeeks.com/projects">Linked Lists</a></li>
-								<li><a href="http://javaforgeeks.com/contact-me">Arrays</a></li>
+								<li><a href="#contact-me">Arrays</a></li>
 							</ul>
 							<!-- /Links -->
 						</div>
 
-						<div class="col-md-4">
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 margin-top-20">
 							<!-- Newsletter Form -->
 							<h4 class="letter-spacing-1">KEEP IN TOUCH</h4>
 							<p>Follow me on the Social Media for all the newest happenings!</p>
@@ -306,10 +330,88 @@
 		<!-- /PRELOADER -->
 
 		<!-- JAVASCRIPT FILES -->
-		<script type="text/javascript">var plugin_path = 'js/';</script>
-		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript">var plugin_path = '../js/';</script>
+		<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
 
-		<script type="text/javascript" src="js/scripts.js"></script>
+		<script type="text/javascript">
+
+			$(document).ready(function() {
+
+	            var alertMsg = $('#alertMsg').fadeOut();
+	            var popup = $('#popup').fadeOut();    
+	            $('#btnExitPopup').on('click', function() {
+	                popup.children('p').remove();
+	                popup.fadeOut();
+	                return false;
+	            });
+
+	            var overlay = $('#overlay').addClass('overlay-remove');
+	            function showLoading() {
+	                overlay.removeClass('overlay-remove');
+	                overlay.addClass('overlay-show');
+	            }
+	            function hideLoading() {
+	                overlay.removeClass('overlay-show');
+	                overlay.addClass('overlay-remove'); 
+	            }
+
+				//  ----------------  submitting the form here  --------------------------
+				$('#form-contact').submit(function() {
+
+					var name = $('#txt-name').val().trim();
+					var email = $('#txt-email').val().trim();
+					var tel = $('#txt-tel').val().trim();
+					var message = $('#txt-message').val().trim();
+
+					showLoading();
+					$.ajax({
+						type: "GET",
+						url: "../AJAXFunctions.php",
+						data: {
+							no: "1", name: name, email: email, tel: tel, message: message
+						},
+						success: function(response) {
+							console.log(response);
+							var res = response.split(" ~~ ");
+							var adminRes = res[1];
+							var queryRes = res[2];
+							if(res[0] == "1") {   // successful case
+
+								if(adminRes == "1") {
+									popup.children('p').remove();
+									popup.append("<p>Thank you for your query. Will reply back ASAP.</p>").fadeIn();
+								} else if(adminRes == "2") {
+									popup.children('p').remove();
+									popup.append("<p>Thank you for your query. Please mail to <code>query@javaforgeeks.com</code> if you don't hear in the next 48 hours. :)</p>").fadeIn();
+								} else {
+									popup.children('p').remove();
+									popup.append("<p>Oops! Error encountered while submitting the request. Please try again or mail to <code>query@javaforgeeks.com</code></p>").fadeIn();	
+								}
+
+
+							} else {
+								popup.children('p').remove();
+								popup.append("<p>Oops! Error encountered while submitting the request. Please try again or mail to <code>query@javaforgeeks.com</code></p>").fadeIn();
+							}
+						},
+						error: function() {
+							popup.children('p').remove();
+							popup.append("<p>Oops! Error encountered while submitting the request. Please try again or mail to <code>query@javaforgeeks.com</code></p>").fadeIn();
+						},
+						complete: function() {
+							hideLoading();
+						}
+					});
+
+					return false;
+				});
+
+
+			});
+
+		</script>
+
+		<script type="text/javascript" src="../js/scripts.js"></script>
 
 	</body>
 </html>
